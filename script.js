@@ -60,3 +60,47 @@ revealEls.forEach((el, i) => {
   el.style.transitionDelay = (i % 4) * 90 + 'ms';
   io.observe(el);
 });
+
+// Lightbox for gallery and about images
+const lightboxModal = document.getElementById('lightboxModal');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxClose = document.querySelector('.lightbox-close');
+
+function openLightbox(src) {
+  lightboxImage.src = src;
+  lightboxModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightboxModal.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxModal.addEventListener('click', (e) => {
+  if (e.target === lightboxModal) closeLightbox();
+});
+
+// Add click listeners to gallery items
+document.querySelectorAll('.g-item img').forEach(img => {
+  img.style.cursor = 'pointer';
+  img.addEventListener('click', function() {
+    openLightbox(this.src);
+  });
+});
+
+// Add click listeners to about section images
+document.querySelectorAll('.about-media img').forEach(img => {
+  img.style.cursor = 'pointer';
+  img.addEventListener('click', function() {
+    openLightbox(this.src);
+  });
+});
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
+    closeLightbox();
+  }
+});
