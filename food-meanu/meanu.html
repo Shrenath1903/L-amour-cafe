@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L'AMORE Digital Food Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V3FVH801HS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-V3FVH801HS');
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-container">
+      <h1 class="logo">L'AMORE</h1>
+      <a href="#menu" class="menu-link">Menu</a>
+    </div>
+  </nav>
+
+  <section class="menu-header">
+    <div class="container">
+      <h2>L'AMORE Digital Food Menu</h2>
+      <p>Modern handcrafted dishes curated for a premium dining experience.</p>
+    </div>
+  </section>
+
+  <section class="menu-section" id="menu">
+    <div class="container">
+
+      <div class="menu-controls">
+        <input type="search" id="searchInput" placeholder="Search dishes, ingredients, or flavor..." />
+        <button class="audio-toggle" id="audioToggle">Play Background Music</button>
+        <!-- <button class="view-full-menu" id="viewFullMenuBtn">View Full Menu</button> -->
+      </div>
+
+      <div class="menu-categories" id="menuCategories"></div>
+
+      <div class="menu-items-container" id="menuItemsContainer"></div>
+
+    </div>
+  </section>
+
+  <audio id="backgroundMusic" preload="auto" autoplay muted playsinline></audio>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <h3>Need Digital Food Menu like this ?</h3>
+
+      <p><strong>CONTACT — A.R.SHRENATH</strong></p>
+      <p>Modern digital menus • Restaurant websites • Branding</p>
+
+      <a href="tel:+918072779321">+91 8072779321</a>
+    </div>
+  </footer>
+
+  <div class="modal" id="detailModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+
+      <div class="modal-body">
+        <div class="modal-image" id="modalImage"></div>
+
+        <div class="modal-info">
+          <h3 id="modalTitle"></h3>
+          <p class="modal-price" id="modalPrice"></p>
+
+          <div class="modal-section">
+            <h4>How It's Made</h4>
+            <p id="modalHowMade"></p>
+          </div>
+
+          <div class="modal-section">
+            <h4>Taste Profile</h4>
+            <p id="modalTasteProfile"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
